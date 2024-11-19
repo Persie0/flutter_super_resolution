@@ -1,10 +1,12 @@
 name: flutter_super_resolution
 description: "A Flutter package for performing super-resolution on images using ONNX models."
-version: 0.0.1
-homepage: https://github.com/your-github-repo/flutter_super_resolution
+version: 1.0.1
+homepage: https://github.com/neuralfulailtd/flutter_super_resolution
+issue_tracker: https://github.com/neuralfulailtd/flutter_super_resolution/issues
+repository: https://github.com/neuralfulailtd/flutter_super_resolution
 author: Fasez Said Massinissa <masy@neuralfulai.com>
-publisher: Neuralful AI Ltd
-
+publisher: neuralfulai.com
+license: MIT
 environment:
   sdk: ^3.5.1
   flutter: ">=1.17.0"
