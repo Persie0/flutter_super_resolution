@@ -1,57 +1,76 @@
-Here is the full `README.md` file to be copied:
+# Flutter Super Resolution
 
-```markdown
-# flutter_super_resolution
+A Flutter library for upscaling images using ONNX Runtime neural networks with advanced tiling support.
 
-A Flutter package for performing super-resolution on images using ONNX models. This package allows you to enhance image quality by applying state-of-the-art super-resolution techniques through the use of ONNX models, making it easy to integrate into your Flutter applications.
+## Platform Support
+
+- Windows
+- macOS
+- iOS
+- Android (Only ARM devices)
 
 ## Features
 
-- Easy integration with Flutter apps.
-- Support for ONNX models to enhance image resolution.
-- Lightweight and efficient for mobile devices.
+- High-quality image upscaling using machine learning models
+- Supports full image and tiled processing
+- Customizable tile size and overlap
+- Progress tracking during upscaling
+- Optimized for mobile devices
 
-## Installation 
+## Installation
 
-Add the following to your `pubspec.yaml`:
+Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_super_resolution:
-    git:
-      url: https://github.com/neuralfulailtd/flutter_super_resolution.git
+  flutter_super_resolution: ^1.0.0
+  onnxruntime: ^latest_version
 ```
 
 ## Usage
 
-To use the package, follow these steps:
-
-1. Import the package in your Dart file:
-
 ```dart
-import 'package:flutter_super_resolution/flutter_super_resolution.dart';
+final upscaler = FlutterUpscaler(
+    tileSize: 128,   // Optional: Customize tile processing
+    overlap: 8       // Optional: Prevent tile seams
+);
+
+// Initialize model from assets
+await upscaler.initializeModel('assets/super_resolution_model.onnx');
+
+// Upscale image
+final upscaledImage = await upscaler.upscaleImage(
+sourceImage,
+scale: 2,        // Scale factor (2x, 4x, etc.)
+onProgress: (progress, message) {
+print('$message: ${(progress * 100).toStringAsFixed(1)}%');
+}
+);
 ```
 
-2. Example usage to load and enhance an image:
+## Parameters
 
-```dart
-import 'package:flutter_super_resolution/flutter_super_resolution.dart';
+- `tileSize`: Size of processing tiles (default: 128)
+- `overlap`: Pixel overlap between tiles to reduce seam artifacts (default: 8)
 
-// Example usage
-final image = await FlutterSuperResolution.loadImage('assets/low_res_image.png');
-final highResImage = await FlutterSuperResolution.enhanceImage(image);
+## Methods
 
-// Do something with the high resolution image
-```
+- `initializeModel(modelPath)`: Load ONNX model from Flutter assets
+- `initializeModelFromFile(filePath)`: Load ONNX model from device file
+- `upscaleImage(image, scale)`: Upscale image with optional progress tracking
+- `dispose()`: Release model resources
 
-## Contributing
+## Requirements
 
-Contributions are welcome! If you'd like to improve the package or fix bugs, please fork the repository, make your changes, and submit a pull request.
+- Flutter SDK
+- ONNX Runtime Flutter plugin
+- Pre-trained ONNX super-resolution model
+
+## Performance Tips
+
+- Use smaller tile sizes for memory-constrained devices
+- Adjust overlap to balance processing quality and speed
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For any inquiries, please contact Fasez Said Massinissa at <masy@neuralfulai.com>.
+MIT License
