@@ -11,7 +11,7 @@ A Flutter package for performing super-resolution on images using ONNX models. T
 - Support for ONNX models to enhance image resolution.
 - Lightweight and efficient for mobile devices.
 
-## Installation
+## Installation 
 
 Add the following to your `pubspec.yaml`:
 
