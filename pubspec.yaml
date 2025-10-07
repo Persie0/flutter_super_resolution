@@ -14,9 +14,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  onnxruntime:
-    git:
-      url: https://github.com/Persie0/onnxruntime_flutter_1_22_0.git
+  onnxruntime_v2: ^1.22.0
 
 dev_dependencies:
   flutter_test:
