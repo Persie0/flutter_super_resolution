@@ -4,7 +4,6 @@ version: 1.0.5
 homepage: https://neuralfulai.com
 issue_tracker: https://github.com/neuralfulailtd/flutter_super_resolution/issues
 repository: https://github.com/neuralfulailtd/flutter_super_resolution
-author: Fasez Said Massinissa <masy@neuralfulai.com>
 publisher: neuralfulai.com
 license: MIT
 environment:

@@ -7,7 +7,7 @@ import 'dart:ui' as ui;
 import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/services.dart';
-import 'package:onnxruntime/onnxruntime.dart';
+import 'package:onnxruntime_v2/onnxruntime_v2.dart';
 
 /// Callback for tracking progress during upscaling
 typedef ProgressCallback = void Function(double progress, String message);
