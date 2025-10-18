@@ -26,6 +26,7 @@ class FlutterUpscaler {
   Future<void> initializeModel(String modelPath) async {
     final sessionOptions = OrtSessionOptions();
     try {
+      sessionOptions.appendDefaultProviders(); // 🎯 That's it!
       OrtEnv.instance.init();
 
       // Optimize for mobile devices
