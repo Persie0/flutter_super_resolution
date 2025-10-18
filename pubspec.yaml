@@ -13,12 +13,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  onnxruntime_v2: ^1.22.0+1
+  onnxruntime_v2:
+    git:
+        url: https://github.com/Persie0/onnxruntime_flutter_1_22_0.git
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
